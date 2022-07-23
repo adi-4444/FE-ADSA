@@ -1,5 +1,5 @@
 
-// Generate list of combinations possiblities
+// https://cses.fi/problemset/task/1635
 function f(n, arr, output) {
    if(n == 0) {
        console.log(output);
@@ -14,6 +14,8 @@ function f(n, arr, output) {
  return ans; 
 }
 
+
+// https://cses.fi/problemset/task/1636
 
 function g(n, arr, output) {
    let a = Array(n+1).fill(0);
