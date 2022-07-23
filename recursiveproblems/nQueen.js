@@ -1,4 +1,4 @@
-let n = 6; // nxn
+let n = 6; // num
 let grid = [];
 for(let i = 0; i < n; i++) {
     let temp = Array(n).fill('');

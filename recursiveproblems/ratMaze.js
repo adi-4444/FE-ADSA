@@ -24,7 +24,6 @@ function f(i, j, m, n) {
    }
    // whenever we will visit a cell we will mark it as visited
    visited[i][j] = true;
-
    let ans = 0;
    ans += f(i, j+1, m, n); // right
    ans += f(i+1, j, m, n); // down

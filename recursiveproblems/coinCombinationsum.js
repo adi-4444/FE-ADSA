@@ -1,5 +1,6 @@
 
 // https://cses.fi/problemset/task/1635
+
 function f(n, arr, output) {
    if(n == 0) {
        console.log(output);
