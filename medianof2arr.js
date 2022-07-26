@@ -9,7 +9,6 @@
 // Explanation: merged array = [1,2,3] and median is 2.
 
 
-
 var findMedianSortedArrays = function(nums1, nums2) {
     const joined=nums1.concat(nums2);
     joined.sort(function(a,b){
@@ -28,11 +27,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 
 
 
-
-// OR
-
-
-
+// or 
 
 let arr1 = [1,3]
 let arr2 = [2]
