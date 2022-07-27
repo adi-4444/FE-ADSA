@@ -1,4 +1,7 @@
 // https://www.spoj.com/problems/ABCDEF/
+// Find the total number of sextuples 
+
+
 
 function lowerbound (arr,x) {
    let start = 0, end = arr.length-1;
@@ -21,7 +24,7 @@ function upperbound (arr,x) {
    let start = 0, end = arr.length-1;
    let ans = arr.length;
    while (start <= end) {
-      let mid = Math.floor(start + (end - start) / 2);
+      let mid = start + Math.floor((end - start) / 2);
       if(arr[mid]<=x) {
          // discard left half
          start = mid + 1;
@@ -35,13 +38,13 @@ function upperbound (arr,x) {
    return ans;
 }
 
-let arr =[5,7,10]
-let lhs = [] , rhs = [];
+let arr =[3,2]
+let lhs = [] , rhs = [];           // N^3
 for (let i = 0; i < arr.length; i++) {
-   for(let j=0;j<arr.length; j++) {
-      for (let k =0 ; k =arr.length; k++) {
+   for(let j=0; j < arr.length; j++) {
+      for (let k =0 ; k < arr.length; k++) {
          lhs.push((arr[i]*arr[j]) + arr[k])
-         if(arr[i] != 0) {
+         if(arr[i] !== 0) {
             rhs.push((arr[i])*(arr[j] + arr[k]));
          }
       }
@@ -52,7 +55,7 @@ lhs.sort((a,b)=>a-b);
 rhs.sort((a,b)=>a-b);
 let ans = 0;
 for(let i = 0; i<lhs.length;i++) {
-   let ub = upperbound(rhs, lhs[i]);
+   let ub = upperbound(rhs, lhs[i]);  // logn
    let lb = lowerbound(rhs, lhs[i]);
    ans += (ub - lb);
 }
