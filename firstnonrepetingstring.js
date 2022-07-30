@@ -24,3 +24,16 @@ console.log(firstNonRepeating("aabccd"));
 * i = 1, str[i] -> e -> freq - 2
 * i = 2, str[i] -> v -> freq - 1
 */
+
+// OR -> may not work
+
+// let str = "abcab"
+// function nonRepeat (str) {
+//     for(let i=0;i<str.length; i++) {
+//         let j = str.charAt(i)
+//         if(str.indexOf(j) === str.lastIndexOf(j)) {
+//             return j;
+//         }
+//     }
+// }
+// console.log(nonRepeat(str))
