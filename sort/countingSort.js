@@ -1,3 +1,4 @@
+// normal Counting Sort
 function countingSort(arr) {
   let maxElement = Math.max(...arr); // O(n)
   let freq = Array(maxElement + 1).fill(0); // O(1)
@@ -17,7 +18,7 @@ function countingSort(arr) {
 }
 
 
-
+// Stable Counting Sort 
 function countingSortStable(arr) {
   // Time: O(n+k) Space: O(n+k)
   let maxElement = Math.max(...arr); // O(n)
@@ -39,3 +40,26 @@ function countingSortStable(arr) {
   }
    return output;
 }
+
+// Counting Sort
+function countingSort(arr) {
+  let maxEl = Math.max(...arr);
+  let minEl = Math.min(...arr);
+  let range = maxEl - minEl + 1;
+  let freq = new Array(range).fill(0);
+  for(let i = 0; i < arr.length; i++) {
+  let currElement = arr[i];
+  freq[currElement - minEl]++;
+  }
+  for(let i = 1; i < freq.length; i++) {
+  freq[i] += freq[i-1];
+  }
+  let output = new Array(arr.length);
+  for(let i = arr.length - 1; i >= 0; i--) {
+  let currelement = arr[i];
+  let index = freq[currelement - minEl];
+  output[index - 1] = currelement;
+  freq[currelement - minEl]--;
+  }
+  return output;
+  }
