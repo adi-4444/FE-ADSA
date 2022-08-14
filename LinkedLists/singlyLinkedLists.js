@@ -75,6 +75,10 @@ class LinkedList { // singly Linked List
       for(let i=0 ; i < pos - 1; i++) {
          prev = prev.next;
       }
+      if(prev.next == null) {
+         this.removeAtTail();
+         return;
+      }
       let nodeToBeDeleted = prev.next;
       prev.next = nodeToBeDeleted.net;
       nodeToBeDeleted.next = null;
