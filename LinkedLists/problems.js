@@ -179,7 +179,29 @@ class LinkedList { // singly Linked List
 		this.flag = true;
 		this.g(this.head);
 	}
+//---------------------------------------
+   foldHelper(end) {
+      if(end == null) return;
+      this.foldHelper(end.next);
+      if(this.flag) {
+          return;
+      }
+      // console.log(this.start.data);
+      if(end == this.start || this.start.next == end) {
+          end.next = null;
+          this.flag = true;
+          return;
+      }
 
+      let temp = this.start.next;
+      this.start.next = end;
+      end.next = temp;
+      this.start = temp;
+  }
+  fold() {
+      this.start = this.head;
+      this.foldHelper(this.head);
+  }
 
 }
 
@@ -194,5 +216,6 @@ ll.addAtHead(1);
 ll.display();
 console.log("***");
 ll.reverseLLValueRecursive();
+ll.fold();
 ll.display();
 

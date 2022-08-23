@@ -51,7 +51,7 @@ class LinkedList {
    }
 }
 
-
+//------------------------------------
 class Stack {
    constructor() {
        this.ll = new LinkedList();
@@ -84,7 +84,7 @@ class Stack {
    isEmpty() {
        return this.ll.isEmpty();
    }
-
+//------------------------------------------
    insertAtBottom(x) {
        let temp = new Stack();
        while(!this.isEmpty()) {
@@ -100,7 +100,7 @@ class Stack {
        } 
    }
 }
-
+ 
 function insertAtBottom(st, x) {
    let temp = new Stack();
    while(!st.isEmpty()) {
@@ -115,7 +115,7 @@ function insertAtBottom(st, x) {
        temp.pop();
    }
 }
-
+//------------------------------------------------
 function nextGreater(arr) {
    /**
     * Time: O(n)
