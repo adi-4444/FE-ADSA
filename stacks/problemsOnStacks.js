@@ -138,7 +138,7 @@ function nextGreater(arr) {
    }
    return output
 }
-
+//------------------------------------
 function nextSmaller(arr) {
    /**
     * Time: O(n)
