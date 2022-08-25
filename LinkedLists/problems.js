@@ -202,6 +202,24 @@ class LinkedList { // singly Linked List
       this.start = this.head;
       this.foldHelper(this.head);
   }
+  //-------------------------------
+  // https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+   deleteDuplicates = function(head) {
+   // Time: O(n)
+   let temp = head;
+   while(temp != null && temp.next != null) {
+   // loop till we dont reach the tail or surpass the tail as there wont be duplicate after tail
+   let nextNode = temp.next;
+   while(nextNode != null && temp.val == nextNode.val) {
+   // this loop removes the duplicate
+   temp.next = nextNode.next;
+   nextNode.next = null;
+   nextNode = temp.next;
+   }
+   temp = temp.next;
+   }
+   return head;
+   };
 
 }
 
