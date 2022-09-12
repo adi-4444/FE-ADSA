@@ -14,7 +14,7 @@ class LinkedList { // singly Linked List
    }
    addAtHead(data) {
       let newNode = new Node(data); // Created a new node
-      newNode.next = this.head; // set the head to next of node
+      newNode.next = this.head; // set the next of node to head
       this.head = newNode;  // updatee new node to the head
    }
 
