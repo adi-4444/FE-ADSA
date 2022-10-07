@@ -9,11 +9,16 @@ function premutation (arr, start) {
       //base case
       console.log(arr)
    }
+   let visited = {} 
    for(let i = start ; i < arr.length; i++) {
-      swap(arr, i, start);
-      premutation(arr, start+1);
-      swap(arr, i, start);
+      if(!visited[arr[i]]) { //this condition is for not counting repeating elements
+         visited[arr[i]] = true;
+         swap(arr, i, start);
+         premutation(arr, start+1);
+         swap(arr, i, start);
+      }
+
    }
 }
 
-premutation ([1,2,3],0)
+premutation ([1,2,2],0)
